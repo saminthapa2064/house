@@ -1,0 +1,54 @@
+$todoblue: #5C7BFF;
+
+body{
+  font-family: Arial;
+}
+// $todoblue
+@mixin button(){
+  padding: 10px;
+  border: 1px solid red;
+  background: red;
+}
+
+.todo-list{
+  width: 80%;
+  border-radius: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  .todo-header{
+    background-color: $todoblue;
+    text-align: center;
+    padding: 10px;
+    color: white
+  }
+  .todo-body{
+    ul{
+      list-style: none;
+      padding-left: 0;
+      li{
+        border-bottom: 1px solid #ddd;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .todo-body__button{
+      @include button;
+      color: white;
+    }
+  }
+  .todo-footer{
+    display: flex;
+    input[type=text]{
+      flex-grow: 1;
+    }
+    button{
+      margin-left: 15px;
+      @include button;
+      background-color: white;
+      border-color: blue;
+      color: blue;
+    }
+  }
+}
